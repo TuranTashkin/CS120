@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem 2</title>
+    <style>
+        h2 { font-family: Arial, sans-serif; margin: 50px auto; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Problem 2: Sort Two Numbers</h2>
+
+    <script>
+        // Get two numbers from user
+        let num1 = parseFloat(prompt("Enter first number:"));
+        let num2 = parseFloat(prompt("Enter second number:"));
+
+        // Validate input
+        if (isNaN(num1) || isNaN(num2)) {
+            console.log("Invalid input. Please enter valid numbers.");
+        } else {
+            // compare the numbers
+            let smaller, larger;
+            if (num1 <= num2) {
+                smaller = num1;
+                larger = num2;
+            } else {
+                smaller = num2;
+                larger = num1;
+            }
+            
+            console.log(`Sorted order: ${smaller} , ${larger}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; background: #f5f5f5; }
+        h2 { color: #2c3e50; }
+        #output { padding: 15px; }
+    </style>
+</head>
+<body>
+    <h2>Problem 1: Name & Children</h2>
+    <div id="output"></div>
+
+    <script>
+        // Part 1- Name
+        let firstName = prompt("Enter your first name:");
+        let lastName = prompt("Enter your last name:");
+        alert(`Your name is ${firstName} ${lastName}`);
+
+        // Part 2- Number of children
+        let children = parseInt(prompt("How many children do you have?"));
+
+        // For when its not a valid number
+        if (isNaN(children) || children < 0) {
+            children = 0;
+        }
+        // child number messages
+        let childMessage = "";
+        if (children === 0) {
+            childMessage = "You have no children.";
+        } else if (children === 1) {
+            childMessage = "You have 1 child.";
+        } else {
+            childMessage = `You have ${children} children.`;
+        }
+
+        document.getElementById("output").textContent = childMessage;
+    </script>
+</body>
+</html>

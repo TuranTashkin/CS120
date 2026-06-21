@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem 4</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Problem 4: Count Less Than</h2>
+    <div id="result"></div>
+
+    <script>
+        // count less than the value
+        function count(arr, value) {
+            let counter = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < value) {
+                    counter++;
+                }
+            }
+            return counter;
+        }
+
+        // testCount() function
+        function testCount() {
+            let numbers = [3, 55, 30, 28, 9, 12, -11, 8, 555, 88];
+            let threshold = 10;
+            const result = count(numbers, threshold);
+
+            // Display in the page
+            document.getElementById("result").innerHTML = `
+                <p>Array: [${numbers.join(", ")}]</p>
+                <p>Value: ${threshold}</p>
+                <p><strong>Count of numbers less than value: ${result}</strong></p>
+            `;
+        }
+        testCount();
+
+    </script>
+</body>
+</html>

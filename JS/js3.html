@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem 3</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .display { color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <h2>Problem 3: Number Range</h2>
+    <div id="output"></div>
+
+    <script>
+        // Get range from user
+        let start = parseInt(prompt("Enter the start of the range:"), 10);
+        let end = parseInt(prompt("Enter the end of the range:"), 10);
+
+        // validate range is correct
+        if (isNaN(start) || isNaN(end) || start > end) {
+            document.getElementById("output").innerHTML = "Invalid range. Please enter numbers where the start number is smaller than the end number.";
+        } else {
+            let oddNumbers = [];
+            let oddSum = 0;
+            let sum = 0;
+
+            // loop the range
+            for (let i = start; i <= end; i++) {
+                if (i % 2 !== 0) {
+                    oddNumbers.push(i);
+                    oddSum += i;
+                }
+                sum += i;
+            }
+
+            // Display results
+            let outputHTML = `<div class="display">Odd numbers in range: ${oddNumbers.join(", ")}.</div>`;
+            outputHTML += `<div class="display">Sum of all numbers: ${sum}.</div>`;
+            outputHTML += `<div class="display">Sum of all odd numbers: ${oddSum}.</div>`;
+            document.getElementById("output").innerHTML = outputHTML;
+        }
+    </script>
+</body>
+</html>

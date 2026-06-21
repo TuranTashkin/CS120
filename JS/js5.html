@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem 5</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        li { padding: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Problem 5: Array To List</h2>
+    <div id="listContainer"></div>
+
+    <script>
+        // turn the array into a list
+        function displayNames(namesString) {
+            const namesArray = namesString.split(",").map(name => name.trim());
+            const listItems = namesArray.map((name, index) => `<li>${name}</li>`).join("");
+            const orderedList = `<ol>${listItems}</ol>`;
+            document.getElementById("listContainer").innerHTML = orderedList;
+        }
+
+        const testString = "Pat, Chris, Marlon, Ferncroft, Assunta";
+        displayNames(testString);
+    </script>
+</body>
+</html>
