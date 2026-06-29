@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Contact · The Last Train</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contactPage {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        .formTableWrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 24px 0;
+        }
+        .formBox {
+            width: 400px;
+            background: #f5eaea;
+            padding: 30px;
+            border-radius: 30px;
+        }
+        .infoBox {
+            width: 200px;
+            background: #f5eaea;
+            padding: 30px;
+            border-radius: 30px;
+        }
+        .contactForm label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: 500;
+        }
+        .contactForm input, .contactForm select, .contactForm textarea {
+            width: 380px;
+            padding: 10px;
+            border-radius: 30px;
+            background: white;
+        }
+        .contactForm button {
+            background: #1e3d47;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 40px;
+            margin-top: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .contactForm button:hover, .availabilityTable th { 
+            background: #f19696; 
+        }
+        .availabilityTable {
+            width: 100%;
+            margin: 16px 0;
+        }
+        .availabilityTable td, .availabilityTable th {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header class="siteHeader">
+        <div class="headerInner">
+            <div class="logo">
+                <span class="bandName">The Last Train</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contactPage">
+        <h1>Book Your Ride (with the band)</h1>
+        <div class="formTableWrap">
+
+            <!-- form -->
+            <div class="formBox">
+                <h3>Want to book us? Get a quote!</h3>
+                <form class="contactForm" action="" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="event">Event type</label>
+                    <select id="event" name="event">
+                        <option>Wedding</option>
+                        <option>Afternoon Event</option>
+                        <option>Late-Night Party</option>
+                        <option>Festival/Fair</option>
+                    </select>
+
+                    <label for="date">Preferred date</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+            <!-- schedule -->
+            <div class="infoBox">
+                <h3>Availability</h3>
+                <table class="availabilityTable">
+                    <thead><tr><th>Date</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr><td>July 18</td><td style="color: red;"><i>booked</i></td></tr>
+                        <tr><td>July 25</td><td style="color: red;"><i>booked</i></td></tr>
+                        <tr><td>Aug 2</td><td style="color: red;"><i>booked</i></td></tr>
+                        <tr><td>Aug 9</td><td style="color: green;"><strong>open</strong></td></tr>
+                        <tr><td>Aug 16</td><td style="color: green;"><strong>open</strong></td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 15px; margin-top: 10px;">We serve southern New England and New Hampshire. Call for more information on dates, venues, and the band!</p>
+                <br>
+                <p>781-555-1234</p>
+            </div>
+        </div>
+
+        <!-- served areas -->
+        <div style="background: #dea8a8; padding: 20px; border-radius: 30px; margin: 20px 0;">
+            <h4>Areas we serve regularly:</h4>
+            <br>
+            <ul style="display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding-left: 0;">
+                <li>Boston</li>
+                <li>Malden</li>
+                <li>Somerville</li>
+                <li>Cambridge</li>
+                <li>Providence, RI</li>
+                <li>Manchester, NH</li>
+                <li>Hartford, CT</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="siteFooter">
+        <div class="footerInner">
+            <div class="footerCol">
+                <span class="band-name">The Last Train</span>
+                <address>100 Broadway Street, Malden, MA</address>
+            </div>
+            <div class="footerCol">
+                <span>the.last.train@gmail.com</span>
+                <span>781-555-1234</span>
+            </div>
+            <div class="footerCol social">
+                <span>FB / IG: @thelasttrainband</span>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <small>© 2026 The Last Train</small>
+        </div>
+    </footer>
+</body>
+</html>

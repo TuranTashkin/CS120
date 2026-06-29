@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Music · The Last Train</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .musicPage {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        .setlistGrid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .setlistCol {
+            background: #f5eaea;
+            padding: 20px;
+            border-radius: 32px;
+        }
+        .setlistCol h3 {
+            padding-bottom: 10px;
+        }
+        .setlistCol ul {
+            padding-left: 30px;
+            padding-right: 10px;
+        }
+        .setlistCol li {
+            margin: 0.5rem 0;
+        }
+        .musicIntro {
+            background: #f5eaea;
+            padding: 20px 30px;
+            border-radius: 40px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="siteHeader">
+        <div class="headerInner">
+            <div class="logo">
+                <span class="bandName">The Last Train</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="music.html" class="active">Music</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="musicPage">
+        <h1>Track List</h1>
+        <div class="musicIntro">
+            <p>We cover everything classic from rock to today's pop, and especially pop rock. Pick your genre and leave the rest to us.</p>
+        </div>
+
+        <!-- list of music genres and setlist -->
+        <div class="setlistGrid">
+            <div class="setlistCol">
+                <h3>Popheads</h3>
+                <ul>
+                    <li>Good For You - Olivia Rodrigo</li>
+                    <li>We Are Young - FUN</li>
+                    <li>Shut Up and Dance — WALK THE MOON</li>
+                    <li>Watermelon Sugar — Harry Styles</li>
+                    <li>Valerie — Amy Winehouse</li>
+                </ul>
+            </div>
+            <div class="setlistCol">
+                <h3>Rockers</h3>
+                <ul>
+                    <li>Oh No!!! - grandson</li>
+                    <li>Sweet Dreams, TN - The Last Shadow Puppets</li>
+                    <li>The Rocks - 5 Seconds of Summer</li>
+                    <li>Sweather Weather - The Neighbourhood</li>
+                    <li>Love Runs Out - OneRepublic</li>
+                </ul>
+            </div>
+            <div class="setlistCol">
+                <h3>Pop-Rock Synthesis</h3>
+                <ul>
+                    <li>Are You Mine - Arctic Monkeys</li>
+                    <li>Achilles Come Down - Gang of Youths</li>
+                    <li>Sweet Dreams, TN - The Last Shadow Puppets</li>
+                    <li>Youngblood - 5 Seconds of Summer</li>
+                    <li>Movement - Hozier</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <!-- inline styling example -->
+        <p style="font-style: italic; color: #00000083; background: #f6e7d7; padding: 10px 20px; border-radius: 30px; display: inline-block;">custom setlists available</p>
+    </main>
+
+    <footer class="siteFooter">
+        <div class="footerInner">
+            <div class="footerCol">
+                <span class="band-name">The Last Train</span>
+                <address>100 Broadway Street, Malden, MA</address>
+            </div>
+            <div class="footerCol">
+                <span>the.last.train@gmail.com</span>
+                <span>781-555-1234</span>
+            </div>
+            <div class="footerCol social">
+                <span>FB / IG: @thelasttrainband</span>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <small>© 2026 The Last Train</small>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About · The Last Train</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .aboutSection {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        .memberGrid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px;
+        }
+        .memberCard {
+            background: #f5eaea;
+            border-radius: 30px;
+            width: 180px;
+            height: 220px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .memberCard img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .bandStory {
+            background: #f5eaea;
+            border-radius: 30px;
+            line-height: 1.5;
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="siteHeader">
+        <div class="headerInner">
+            <div class="logo">
+                <span class="bandName">The Last Train</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="aboutSection">
+        <h1>The Conductors Of This Train</h1>
+
+        <!-- members of the band -->
+        <div class="memberGrid">
+            <div class="memberCard"><img src=bandMember1.jpg><h4>Adam Jarvis</h4><p>vocals · keys</p></div>
+            <div class="memberCard"><img src=bandMember2.jpg><h4>Marcus Jeans</h4><p>guitar · backing</p></div>
+            <div class="memberCard"><img src=bandMember3.jpg><h4>Sam Singer</h4><p>bass · synth</p></div>
+            <div class="memberCard"><img src=bandMember4.jpg><h4>Riley Parker</h4><p>drums · percussion</p></div>
+        </div>
+
+        <!-- biography -->
+        <div class="bandStory">
+            <h2>Our story</h2>
+            <p>The Last Train formed in 2018 when four friends from Malden decided to bring high-energy pop and rock covers to weddings, 
+                corporate parties, and backyard bashes. We've played over 150 shows across New England, from intimate clubs to festival stages. 
+                Our motto: “every song is a one-way ticket to a good time.”</p>
+            <p>We pride ourselves on reading the room — whether it's 80s rock, modern pop, or soulful ballads, we tailor each set to make your event unforgettable.</p>
+        </div>
+    </main>
+
+    <footer class="siteFooter">
+        <div class="footerInner">
+            <div class="footerCol">
+                <span class="bandName">The Last Train</span>
+                <address>100 Broadway Street, Malden, MA</address>
+            </div>
+            <div class="footerCol">
+                <span>the.last.train@gmail.com</span>
+                <span>781-555-1234</span>
+            </div>
+            <div class="footerCol social">
+                <span>IG: @thelasttrainband</span>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <small>© 2026 The Last Train</small>
+        </div>
+    </footer>
+</body>
+</html>

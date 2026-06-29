@@ -1,0 +1,185 @@
+/* style.css - external stylesheet for all pages */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/* headers and navigation bar*/
+
+.siteHeader {
+    background: #1e2b2f;
+    color: #f0eae3;
+    padding: 30px 30px;
+    position: sticky;
+}
+
+.headerInner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bandName {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: #f0eae3;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 40px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.nav a:hover, .nav a.active {
+    background: #55b1d9;
+    color: white;
+}
+
+
+
+/* footer */
+
+.siteFooter {
+    background: #1e2b2f;
+    color: #d6cec4;
+    padding: 30px;
+    margin-top: auto;
+}
+
+.footerInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footerCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerBottom {
+    text-align: center;
+    padding-top: 10px;
+    color: #a09488;
+}
+
+/* INDEX STYLE */
+
+/* hero and sections */
+
+.hero {
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 197, 197);
+    text-shadow: 0 0 50px rgb(21, 0, 0);
+    border-radius: 40px;
+}
+
+.heroContent {
+    max-width: 700px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 100px;
+    font-weight: 700;
+    text-shadow: 0 0 50px rgb(21, 0, 0);
+}
+
+.sectionContent {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;  /* ← Add this */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(194, 12, 12);
+    text-shadow: 0 0 50px #ffffff;
+    border-radius: 40px;
+}
+
+.sectionText {
+    font-size: 50px;
+}
+
+.bottomSection {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 100px;
+    opacity: 80%;
+    color: #ff0000;
+    text-shadow: 0 0 50px white;
+}
+
+.bottomSpace {
+    margin-bottom: 100px;
+}
+
+.outlineLight {
+    background: #ffffff82;
+    border: 2px solid #cd4d4d;
+    color: #800000;
+    padding: 20px;
+    border-radius: 40px;
+    font-weight: 500;
+    transition: 0.25s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 50px;
+}
+.outlineLight:hover {
+    background: #f0eae3;
+}
+
+
+/* window adjusting */
+
+@media (max-width: 650px) {
+    .headerInner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+    .footerInner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .setlistGrid {
+        flex-direction: column;
+    }
+    .formTableWrap {
+        flex-direction: column;
+    }
+}
