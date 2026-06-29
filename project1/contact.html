@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
     <title>Contact · The Last Train</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -60,6 +58,21 @@
         .availabilityTable td, .availabilityTable th {
             padding: 10px;
             text-align: left;
+        }
+        @media (max-width: 650px) {
+            .formTableWrap {
+                flex-direction: column;
+            }
+            .formBox, .infoBox {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .contactForm input, 
+            .contactForm select, 
+            .contactForm textarea {
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
