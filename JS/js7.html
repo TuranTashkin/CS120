@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem 7</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Problem 7</h2>
+    
+    <select id="stateSelect" size="5"></select>
+    <br><br>
+
+    <button id="addStateButton">Add State</button>
+    <br><br>
+
+    <div id="selectedStatesDiv">
+        <ol id="selectedStatesList"></ol>
+    </div>
+    
+    <button id="clearStatesButton">Clear States</button>
+
+    <script>
+        const states = [
+            "Massachusetts", "Rhode Island", "Vermont", "New Hampshire", "Connecticut",
+            "Maine", "New York", "Pennsylvania", "New Jersey", "Delaware"
+        ];
+        const selectEl = document.getElementById("stateSelect");
+        const listEl = document.getElementById("selectedStatesList");
+        const addButton = document.getElementById("addStateButton");
+        const clearButton = document.getElementById("clearStatesButton");
+
+        // Populate the selected with the staet
+        function populateSelect() {
+            states.forEach((state, index) => {
+                const option = document.createElement("option");
+                option.textContent = state;
+                if (index === 0) option.selected = true;
+                selectEl.appendChild(option);
+            });
+        }
+
+        populateSelect();
+
+        // Add State button handler
+        addButton.onclick = function() {
+            const selectedState = selectEl.value;
+            if (selectedState) {
+                const li = document.createElement("li");
+                li.textContent = selectedState;
+                listEl.appendChild(li);
+            }
+        };
+
+        // Clear States button handler
+        clearButton.onclick = function() {
+            listEl.innerHTML = "";
+        };
+    </script>
+</body>
+</html>

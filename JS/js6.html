@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem 6</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+    </style>
+</head>
+<body>
+    <form id="greetingForm">
+        <label for="userName">Enter your name:</label>
+        <input type="text" id="userName">
+        <br><br>
+
+        <input type="button" value="Hello" id="helloButton">
+        <input type="button" value="Good Bye" id="goodbyeButton">
+        <input type="button" value="Greetings" id="greetingsButton">
+    </form>
+
+    <div id="greetingDisplay"></div>
+
+    
+    <script>
+        // Get the elements from the HTML
+        const nameInput = document.getElementById("userName");
+        const displayDiv = document.getElementById("greetingDisplay");
+
+        // Says the name of the user
+        function speak(greeting) {
+            const name = nameInput.value.trim();
+            displayDiv.innerHTML = `<h3>${greeting} ${name}</h3>`;
+        }
+
+        // Handle events when loaded
+        window.onload = function() {
+            const helloButton = document.getElementById("helloButton");
+            const goodbyeButton = document.getElementById("goodbyeButton");
+            const greetingsButton = document.getElementById("greetingsButton");
+
+            helloButton.onclick = function() { speak("Hello"); };
+            goodbyeButton.onclick = function() { speak("Good Bye"); };
+            greetingsButton.onclick = function() { speak("Greetings"); };
+
+            // first speak
+            speak("Hello");
+        };
+    </script>
+</body>
+</html>

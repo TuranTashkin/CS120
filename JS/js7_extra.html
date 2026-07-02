@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem 7</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Extra Credit: State Selector (with removal)</h2>
+    
+    <select id="stateSelect" size="5"></select>
+    <br><br>
+
+    <button id="addStateButton">Add State</button>
+    <br><br>
+    
+    <div id="selectedStatesDiv">
+        <ol id="selectedStatesList"></ol>
+    </div>
+    
+    <button id="clearStatesButton">Clear States</button>
+
+    <script>
+        const states = [
+            "Massachusetts", "Rhode Island", "Vermont", "New Hampshire", "Connecticut",
+            "Maine", "New York", "Pennsylvania", "New Jersey", "Delaware"
+        ];
+        const selectEl = document.getElementById("stateSelect");
+        const listEl = document.getElementById("selectedStatesList");
+        const addButton = document.getElementById("addStateButton");
+        const clearButton = document.getElementById("clearStatesButton");
+
+        let availableStates = [...states];
+        let selectedStates = [];
+
+        // Populate the selected with the staet
+        function populateSelect() {
+            selectEl.innerHTML = ""; 
+            
+            if (availableStates.length === 0) {
+                const option = document.createElement("option");
+                option.textContent = "No states left";
+                option.disabled = true;
+                selectEl.appendChild(option);
+                return;
+            }
+            
+            availableStates.forEach((state) => {
+                const option = document.createElement("option");
+                option.textContent = state;
+                selectEl.appendChild(option);
+            });
+            
+            if (selectEl.options.length > 0) {
+                selectEl.options[0].selected = true;
+            }
+        }
+
+        // Function to update the list display
+        function updateList() {
+            listEl.innerHTML = "";
+            
+            selectedStates.forEach((state) => {
+                const li = document.createElement("li");
+                li.textContent = state;
+                listEl.appendChild(li);
+            });
+        }
+
+        populateSelect();
+
+        // Add State button handler
+        addButton.onclick = function() {
+            if (availableStates.length === 0) return;
+            
+            const selectedState = selectEl.value;
+            if (!selectedState) return;
+            
+            const index = availableStates.indexOf(selectedState);
+            if (index !== -1) {
+                availableStates.splice(index, 1);
+            }
+            
+            selectedStates.push(selectedState);
+            
+            populateSelect();
+            updateList();
+        };
+
+        // Clear States button handler
+        clearButton.onclick = function() {
+            availableStates = [...states];
+            selectedStates = [];
+            
+            populateSelect();
+            updateList();
+        };
+    </script>
+</body>
+</html>
