@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Part 3</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Part 3: Filter data</h2>
+    
+    <form>
+        <select id="genreSelect"></select>
+        <button type="button" id="filterButton">Filter</button>
+    </form>
+    <div id="output"></div>
+
+
+    <script>
+        let songsData = [];
+
+        $.get("songs.json", function(data) {
+            songsData = data.songs;
+            
+            // get the list of the genres for the dropdown
+            const genres = new Set();
+            songsData.forEach(function(song) {
+                song.genres.forEach(function(genre) {
+                    genres.add(genre);
+                });
+            });
+            
+            // populate the select variable
+            const select = document.getElementById("genreSelect");
+            genres.forEach(function(genre) {
+                const option = document.createElement("option");
+                option.textContent = genre;
+                option.value = genre;
+                select.appendChild(option);
+            });
+        });
+
+        // filter the songs and list them
+        document.getElementById("filterButton").onclick = function() {
+            const selectedGenre = document.getElementById("genreSelect").value;
+            let html = "";
+            
+            songsData.forEach(function(song) {
+                if (song.genres.includes(selectedGenre)) {
+                    html += song.title + "<br>";
+                }
+            });
+            
+            document.getElementById("output").innerHTML = html;
+        };
+    </script>
+</body>
+</html>

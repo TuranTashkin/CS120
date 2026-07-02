@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Part 2</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Part 2: Read JSON from file</h2>
+    <div id="output"></div>
+
+    <script>
+        // list all of the songs
+        $.get("songs.json", function(data) {
+            let html = "";
+            data.songs.forEach(function(song) {
+                html += `<strong>${song.title}</strong><br>`;
+                html += `Artist: ${song.artist}<br>`;
+                html += `Genre: ${song.genres.join(", ")}<br>`;
+                html += `Released ${song.year}<br><br>`;
+            });
+            document.getElementById("output").innerHTML = html;
+        });
+    </script>
+</body>
+</html>

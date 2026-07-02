@@ -1,0 +1,71 @@
+{
+    "songs": [
+        {
+            "title": "Do I Wanna Know?",
+            "artist": "Arctic Monkeys",
+            "year": 2013,
+            "genres": [
+                "rock"
+            ]
+        },
+        {
+            "title": "Sweater Weather",
+            "artist": "The Neighbourhood",
+            "year": 2012,
+            "genres": [
+                "rock"
+            ]
+        },
+        {
+            "title": "Sweet Child O' Mine",
+            "artist": "Guns N' Roses",
+            "year": 1987,
+            "genres": [
+                "rock",
+                "metal"
+            ]
+        },
+        {
+            "title": "Youngblood",
+            "artist": "5 Seconds of Summer",
+            "year": 2018,
+            "genres": [
+                "pop"
+            ]
+        },
+        {
+            "title": "Jolene",
+            "artist": "Dolly Parton",
+            "year": 1973,
+            "genres": [
+                "country"
+            ]
+        },
+        {
+            "title": "Nothing Breaks Like A Heart",
+            "artist": "Miley Cyrus",
+            "year": 2018,
+            "genres": [
+                "pop"
+            ]
+        },
+        {
+            "title": "Thriller",
+            "artist": "Michael Jackson",
+            "year": 1982,
+            "genres": [
+                "pop",
+                "rock"
+            ]
+        },
+        {
+            "title": "Everyone's A Star!",
+            "artist": "5 Seconds of Summer",
+            "year": 2025,
+            "genres": [
+                "pop",
+                "rock"
+            ]
+        }
+    ]
+}
