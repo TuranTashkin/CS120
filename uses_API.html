@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+    </style>
+</head>
+
+<body>
+    <h1>Coordinator: Input City, Output Coordinates</h1>
+    
+    <input type="text" id="searchInput" placeholder="Enter a city or address">
+    <button onclick="getLocation()">Search</button>
+    
+    <div id="results"></div>
+
+    <script>
+        function getLocation() {
+            let address = document.getElementById('searchInput').value;
+            let resultsDiv = document.getElementById('results');
+
+            const url = `https://nominatim.openstreetmap.org/search?q=${address}&format=json&limit=1`;
+
+            // get the data from the API url above
+            fetch(url, {
+                headers: {
+                    'User-Agent': 'LocationFinder/1.0'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // check if I received the data
+                if (data.length === 0) {
+                    resultsDiv.innerHTML = '<p>No location found. Try again.</p>';
+                    return;
+                }
+
+                // get the first result
+                const place = data[0];
+
+                // display the provided data
+                resultsDiv.innerHTML = `
+                    <h2>Location Information</h2>
+                    <p><strong>Name:</strong> ${place.display_name}</p>
+                    <p><strong>Latitude:</strong> ${place.lat}</p>
+                    <p><strong>Longitude:</strong> ${place.lon}</p>
+                `;
+            })
+        }
+
+    </script>
+</body>
+</html>
