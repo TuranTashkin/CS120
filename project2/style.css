@@ -15,10 +15,10 @@ h1 {
     display: none;
 }
 
-#statement, #endGame {
-    margin: auto;
+#statement, #endGames {
     text-align: center;
     color: white;
+    margin: auto;
 }
 
 .row {
@@ -42,7 +42,7 @@ h1 {
     aspect-ratio: 1/1;
 }
 
-#guess1, #guess2, #guess3, #guess4, #endGame {
+#guess1, #guess2, #guess3, #guess4 {
     display: flex;
     flex-direction: row;
     gap: 5px;
