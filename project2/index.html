@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TORDLE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <h1>TORDLE</h1>
+    <div id="endGame" class="hidden">
+        <p id="play"><strong>Play again?</strong></p>
+        <button id="yes">Yes</button>
+    </div>
+
+    <main class="aboutSection">
+        <div id="game">
+            <strong>
+            <div class="row" id="row1">
+                <p class="letter" id="letter11"> </p>
+                <p class="letter" id="letter12"> </p>
+                <p class="letter" id="letter13"> </p>
+                <p class="letter" id="letter14"> </p>
+                <p class="letter" id="letter15"> </p>
+            </div>
+            <div class="row" id="row2">
+                <p class="letter" id="letter21"> </p>
+                <p class="letter" id="letter22"> </p>
+                <p class="letter" id="letter23"> </p>
+                <p class="letter" id="letter24"> </p>
+                <p class="letter" id="letter25"> </p>
+            </div>
+            <div class="row" id="row3">
+                <p class="letter" id="letter31"> </p>
+                <p class="letter" id="letter32"> </p>
+                <p class="letter" id="letter33"> </p>
+                <p class="letter" id="letter34"> </p>
+                <p class="letter" id="letter35"> </p>
+            </div>
+            <div class="row" id="row4">
+                <p class="letter" id="letter41"> </p>
+                <p class="letter" id="letter42"> </p>
+                <p class="letter" id="letter43"> </p>
+                <p class="letter" id="letter44"> </p>
+                <p class="letter" id="letter45"> </p>
+            </div>
+            <div class="row" id="row5">
+                <p class="letter" id="letter51"> </p>
+                <p class="letter" id="letter52"> </p>
+                <p class="letter" id="letter53"> </p>
+                <p class="letter" id="letter54"> </p>
+                <p class="letter" id="letter55"> </p>
+            </div>
+            <div class="row" id="row6">
+                <p class="letter" id="letter61"> </p>
+                <p class="letter" id="letter62"> </p>
+                <p class="letter" id="letter63"> </p>
+                <p class="letter" id="letter64"> </p>
+                <p class="letter" id="letter65"> </p>
+            </div>
+            </strong>
+
+            <br>
+            <p id="statement"> </p>
+            <br>
+            <div id="guessing">
+                <input type="text" id="guessWord" placeholder="Guess a 5-letter word">
+                <button id="sendWord">Take a Guess</button>
+            </div>
+            <br>
+            <div id="guess1">
+                <p class="usedLetter" id="letterA">A</p>
+                <p class="usedLetter" id="letterB">B</p>
+                <p class="usedLetter" id="letterC">C</p>
+                <p class="usedLetter" id="letterD">D</p>
+                <p class="usedLetter" id="letterE">E</p>
+                <p class="usedLetter" id="letterF">F</p>
+                <p class="usedLetter" id="letterG">G</p>
+            </div>
+            <div id="guess2">
+                <p class="usedLetter" id="letterH">H</p>
+                <p class="usedLetter" id="letterI">I</p>
+                <p class="usedLetter" id="letterJ">J</p>
+                <p class="usedLetter" id="letterK">K</p>
+                <p class="usedLetter" id="letterL">L</p>
+                <p class="usedLetter" id="letterM">M</p>
+            </div>
+            <div id="guess3">
+                <p class="usedLetter" id="letterN">N</p>
+                <p class="usedLetter" id="letterO">O</p>
+                <p class="usedLetter" id="letterP">P</p>
+                <p class="usedLetter" id="letterQ">Q</p>
+                <p class="usedLetter" id="letterR">R</p>
+                <p class="usedLetter" id="letterS">S</p>
+                <p class="usedLetter" id="letterT">T</p>
+            </div>
+            <div id="guess4">
+                <p class="usedLetter" id="letterU">U</p>
+                <p class="usedLetter" id="letterV">V</p>
+                <p class="usedLetter" id="letterW">W</p>
+                <p class="usedLetter" id="letterX">X</p>
+                <p class="usedLetter" id="letterY">Y</p>
+                <p class="usedLetter" id="letterZ">Z</p>
+            </div>
+        </div>
+        <script type="module" crossorigin src="wordle.js"></script>
+
+    </main>
+
+</body>
+</html>
