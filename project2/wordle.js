@@ -111,7 +111,7 @@ function setWord() {
             document.getElementById('statement').textContent = 'Use valid characters only.';
             return;
         }
-        
+
         document.getElementById(`letter${currentRow}${i + 1}`).textContent = guessWord[i];
     }
 
@@ -122,6 +122,7 @@ function setWord() {
     if(correctLetters == 5){
         document.getElementById('statement').textContent = `YOU WIN! THE WORD WAS ${currentWord}. PLAY AGAIN?`;
         endGame();
+        return;
     }
 
     // handle the loss
