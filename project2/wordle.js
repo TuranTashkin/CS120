@@ -129,6 +129,7 @@ function setWord() {
     if(currentRow > 6) {
         document.getElementById('statement').textContent = `GAME OVER! THE WORD WAS ${currentWord}. PLAY AGAIN?`;
         endGame();
+        return;
     }
 }
 
