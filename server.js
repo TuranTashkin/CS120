@@ -8,6 +8,16 @@ const client = new MongoClient(uri);
 
 app.use(express.urlencoded({ extended: true }));
 
+async function connectDB() {
+    try {
+        await client.connect();
+        console.log('✅ Connected to MongoDB');
+    } catch (error) {
+        console.error('❌ MongoDB connection error:', error);
+        process.exit(1);
+    }
+}
+
 app.get('/', (req, res) => {
     res.send(`
         <div style="font-family: Arial, sans-serif; margin: 20px;">
@@ -22,7 +32,6 @@ app.get('/', (req, res) => {
 
 app.post('/process', async (req, res) => {
     try {
-        await client.connect();
         const db = client.db('zipsDB');
         const collection = db.collection('places');
         
@@ -69,7 +78,6 @@ app.post('/process', async (req, res) => {
                         <br>
                         <a href="/">New Search</a>
                     </div>
-
                 `);
             } else {
                 res.send(`
@@ -83,12 +91,23 @@ app.post('/process', async (req, res) => {
 
     } catch (error) {
         console.error('Error:', error);
-        res.send('An error occurred');
-    } finally {
-        await client.close();
+        res.send(`
+            <div style="font-family: Arial, sans-serif; margin: 20px;">
+                <h1>Error</h1>
+                <p>An error occurred while processing your request.</p>
+                <a href="/">Try Again</a>
+            </div>
+        `);
     }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
     console.log(`Server running on port ${PORT}`);
+    await connectDB(); 
+});
+
+process.on('SIGINT', async () => {
+    await client.close();
+    console.log('MongoDB connection closed');
+    process.exit(0);
 });
