@@ -1,10 +1,10 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const app = express();
-const port = 3000;
-const uri = 'mongodb://localhost:27017';
-const client = new MongoClient(uri);
+const PORT = process.env.PORT || 3000; 
 
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+const client = new MongoClient(uri);
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -20,8 +20,6 @@ app.get('/', (req, res) => {
     `);
 });
 
-
-// run the app
 app.post('/process', async (req, res) => {
     try {
         await client.connect();
@@ -86,9 +84,11 @@ app.post('/process', async (req, res) => {
     } catch (error) {
         console.error('Error:', error);
         res.send('An error occurred');
+    } finally {
+        await client.close();
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
