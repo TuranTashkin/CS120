@@ -10,9 +10,9 @@ if (!uri) {
     process.exit(1);
 }
 
-// ✅ Clean MongoDB configuration - no conflicting options
 const client = new MongoClient(uri, {
     tls: true,
+    tlsAllowInvalidCertificates: true, // ⚠️ Temporary fix for testing
     serverSelectionTimeoutMS: 15000,
     socketTimeoutMS: 45000,
     connectTimeoutMS: 15000,
