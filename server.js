@@ -9,18 +9,12 @@ if (!uri) {
     process.exit(1);
 }
 
-// ✅ EXPLICIT TLS CONFIGURATION TO FIX SSL ERROR
+// ✅ CORRECT - No conflicting options
 const client = new MongoClient(uri, {
     tls: true,
-    tlsAllowInvalidCertificates: false,
-    serverSelectionTimeoutMS: 15000, // Increased timeout
+    serverSelectionTimeoutMS: 15000,
     socketTimeoutMS: 45000,
     connectTimeoutMS: 15000,
-    // These options force the driver to use TLS 1.2
-    tlsCAFile: undefined,
-    tlsCertificateKeyFile: undefined,
-    tlsCertificateKeyFilePassword: undefined,
-    tlsInsecure: false,
 });
 
 app.use(express.urlencoded({ extended: true }));
