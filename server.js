@@ -12,7 +12,6 @@ if (!uri) {
 
 // ✅ Clean configuration without conflicting options
 const client = new MongoClient(uri, {
-    tls: true,
     serverSelectionTimeoutMS: 15000,
     socketTimeoutMS: 45000,
     connectTimeoutMS: 15000,
