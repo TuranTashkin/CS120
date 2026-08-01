@@ -9,8 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+"dependencies": {
     "express": "^5.2.1",
-    "mongodb": "^7.5.0"
-  }
+    "mongodb": "^5.9.0"
+}
 }
